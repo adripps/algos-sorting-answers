@@ -1,0 +1,38 @@
+1.
+FUNCTION bubbleSort(collection)
+	WHILE swapped is true
+		SET swapped to false
+
+		FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+			IF collection[i] > collection[i + 1] THEN
+				SET temp to collection[i] 
+				SET collection[i] to collection[i + 1]
+				SET collection[i + 1] to temp
+				SET swapped to true
+			END IF
+		END FOR
+	END WHILE
+
+	RETURN collection
+END FUNCTION
+2.
+FUNCTION quickSort(collection)
+
+	SET left to empty array
+	SET right to empty array
+	SET sortedArray to empty array
+	SET pivot to LAST item in collection
+	
+	FOR = FIRST INDEX of collection to LAST INDEX of collection - 1
+		IF collection[i] <= pivot THEN
+			PUSH left onto collection[i]
+		END IF
+		ELSE PUSH right onto collection[i]
+	END FOR
+	
+	CONCAT sortedArray with quickSort(left) AND pivot AND quickSort(right)
+	RETURN sortedArray
+ 
+END FUNCTION
+3. Merge sort and quick sort are both more efficient at sorting than other sorting algorithms because they both use the divide and conquer approach. In doing this the necessary sorting is able to become exponentially less and less as opposed to algorithms that have to iterate through each item individually.
+4. Bucket sorting involves taking the data and dispersing them in "buckets" and organizing the data from there. It is ideal for when you need to sort a list that is too huge to use other sorting algorithms alone.
